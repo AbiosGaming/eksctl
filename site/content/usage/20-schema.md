@@ -338,6 +338,10 @@ NodeGroup:
       type: integer
     ebsOptimized:
       type: boolean
+    elasticInferenceAccelerators:
+      items:
+        type: string
+      type: array
     iam:
       $ref: '#/definitions/NodeGroupIAM'
       $schema: http://json-schema.org/draft-04/schema#

@@ -146,6 +146,9 @@ func setIAMDefaults(iamConfig *NodeGroupIAM) {
 	if iamConfig.WithAddonPolicies.EFS == nil {
 		iamConfig.WithAddonPolicies.EFS = Disabled()
 	}
+	if iamConfig.WithAddonPolicies.ElasticInference == nil {
+		iamConfig.WithAddonPolicies.ElasticInference = Disabled()
+	}
 }
 
 func setSSHDefaults(sshConfig *NodeGroupSSH) {

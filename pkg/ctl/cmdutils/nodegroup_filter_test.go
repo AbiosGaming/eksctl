@@ -383,7 +383,8 @@ const expected = `
 				  "efs": false,
 				  "albIngress": false,
 				  "xRay": false,
-				  "cloudWatch": false
+				  "cloudWatch": false,
+				  "elasticInference": false
 			    }
 			  }
 		  },
@@ -424,7 +425,8 @@ const expected = `
 				  "efs": false,
 				  "albIngress": false,
 				  "xRay": false,
-				  "cloudWatch": false
+				  "cloudWatch": false,
+				  "elasticInference": false
 			    }
 			  }
 		  },
@@ -463,7 +465,8 @@ const expected = `
 				  "efs": false,
 				  "albIngress": false,
 				  "xRay": false,
-				  "cloudWatch": false
+				  "cloudWatch": false,
+				  "elasticInference": false
 			    }
 			  },
 			  "clusterDNS": "1.2.3.4"
@@ -503,7 +506,8 @@ const expected = `
 			  	  "efs": false,
 				  "albIngress": false,
 				  "xRay": false,
-				  "cloudWatch": false
+				  "cloudWatch": false,
+				  "elasticInference": false
 			    }
 			  }
 		  },
@@ -545,7 +549,8 @@ const expected = `
 			  	  "efs": false,
 				  "albIngress": false,
 				  "xRay": false,
-				  "cloudWatch": false
+				  "cloudWatch": false,
+				  "elasticInference": false
 			    }
 			  },
 			  "clusterDNS": "4.2.8.14"
@@ -588,7 +593,8 @@ const expected = `
 			  	  "efs": false,
 				  "albIngress": false,
 				  "xRay": false,
-				  "cloudWatch": false
+				  "cloudWatch": false,
+				  "elasticInference": false
 			    }
 			  }
 		  }

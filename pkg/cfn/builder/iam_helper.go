@@ -240,4 +240,17 @@ func createRole(cfnTemplate cfnTemplate, iamConfig *api.NodeGroupIAM) {
 			},
 		)
 	}
+
+	if api.IsEnabled(iamConfig.WithAddonPolicies.ElasticInference) {
+		cfnTemplate.attachAllowPolicy("PolicyElasticInference", refIR, "*",
+			[]string{
+				"elastic-inference:Connect",
+				"iam:List*",
+				"iam:Get*",
+				"ec2:Describe*",
+				"ec2:Get*",
+				"ec2:ModifyInstanceAttribute",
+			},
+		)
+	}
 }

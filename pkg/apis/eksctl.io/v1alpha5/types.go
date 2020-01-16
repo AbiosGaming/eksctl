@@ -476,17 +476,18 @@ func NewNodeGroup() *NodeGroup {
 		VolumeType:      &DefaultNodeVolumeType,
 		IAM: &NodeGroupIAM{
 			WithAddonPolicies: NodeGroupIAMAddonPolicies{
-				ImageBuilder: Disabled(),
-				AutoScaler:   Disabled(),
-				ExternalDNS:  Disabled(),
-				CertManager:  Disabled(),
-				AppMesh:      Disabled(),
-				EBS:          Disabled(),
-				FSX:          Disabled(),
-				EFS:          Disabled(),
-				ALBIngress:   Disabled(),
-				XRay:         Disabled(),
-				CloudWatch:   Disabled(),
+				ImageBuilder:     Disabled(),
+				AutoScaler:       Disabled(),
+				ExternalDNS:      Disabled(),
+				CertManager:      Disabled(),
+				AppMesh:          Disabled(),
+				EBS:              Disabled(),
+				FSX:              Disabled(),
+				EFS:              Disabled(),
+				ALBIngress:       Disabled(),
+				XRay:             Disabled(),
+				CloudWatch:       Disabled(),
+				ElasticInference: Disabled(),
 			},
 		},
 		SSH: &NodeGroupSSH{
@@ -511,17 +512,18 @@ func NewManagedNodeGroup() *ManagedNodeGroup {
 		},
 		IAM: &NodeGroupIAM{
 			WithAddonPolicies: NodeGroupIAMAddonPolicies{
-				ImageBuilder: Disabled(),
-				AutoScaler:   Disabled(),
-				ExternalDNS:  Disabled(),
-				CertManager:  Disabled(),
-				AppMesh:      Disabled(),
-				EBS:          Disabled(),
-				FSX:          Disabled(),
-				EFS:          Disabled(),
-				ALBIngress:   Disabled(),
-				XRay:         Disabled(),
-				CloudWatch:   Disabled(),
+				ImageBuilder:     Disabled(),
+				AutoScaler:       Disabled(),
+				ExternalDNS:      Disabled(),
+				CertManager:      Disabled(),
+				AppMesh:          Disabled(),
+				EBS:              Disabled(),
+				FSX:              Disabled(),
+				EFS:              Disabled(),
+				ALBIngress:       Disabled(),
+				XRay:             Disabled(),
+				CloudWatch:       Disabled(),
+				ElasticInference: Disabled(),
 			},
 		},
 	}
@@ -547,7 +549,9 @@ type NodeGroup struct {
 	AMIFamily string `json:"amiFamily,omitempty"`
 	// +optional
 	InstanceType string `json:"instanceType,omitempty"`
-	//+optional
+	// +optional
+	ElasticInferenceAccelerators []string `json:"elasticInferenceAccelerator,omitempty"`
+	// +optional
 	InstancesDistribution *NodeGroupInstancesDistribution `json:"instancesDistribution,omitempty"`
 	// +optional
 	AvailabilityZones []string `json:"availabilityZones,omitempty"`
@@ -683,6 +687,8 @@ type (
 		XRay *bool `json:"xRay"`
 		// +optional
 		CloudWatch *bool `json:"cloudWatch"`
+		// +optional
+		ElasticInference *bool `json:"elasticInference"`
 	}
 
 	// NodeGroupSSH holds all the ssh access configuration to a NodeGroup

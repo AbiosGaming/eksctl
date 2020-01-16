@@ -329,6 +329,9 @@ func validateNodeGroupIAM(iam *NodeGroupIAM, value, fieldName, path string) erro
 		if IsEnabled(iam.WithAddonPolicies.CloudWatch) {
 			return fmtFieldConflictErr(prefix + "cloudWatch")
 		}
+		if IsEnabled(iam.WithAddonPolicies.ElasticInference) {
+			return fmtFieldConflictErr(prefix + "elasticInference")
+		}
 	}
 	return nil
 }

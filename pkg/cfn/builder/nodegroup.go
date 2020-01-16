@@ -235,6 +235,13 @@ func newLaunchTemplateData(n *NodeGroupResourceSet) *gfn.AWSEC2LaunchTemplate_La
 		IamInstanceProfile: &gfn.AWSEC2LaunchTemplate_IamInstanceProfile{
 			Arn: n.instanceProfileARN,
 		},
+		ElasticInferenceAccelerators: func() []gfn.AWSEC2LaunchTemplate_LaunchTemplateElasticInferenceAccelerator {
+			accelerators := make([]gfn.AWSEC2LaunchTemplate_LaunchTemplateElasticInferenceAccelerator, len(n.spec.ElasticInferenceAccelerators))
+			for i := range n.spec.ElasticInferenceAccelerators {
+				accelerators[i].Type = gfn.NewString(n.spec.ElasticInferenceAccelerators[i])
+			}
+			return accelerators
+		}(),
 		ImageId:  gfn.NewString(n.spec.AMI),
 		UserData: n.userData,
 		NetworkInterfaces: []gfn.AWSEC2LaunchTemplate_NetworkInterface{{

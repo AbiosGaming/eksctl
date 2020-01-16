@@ -435,6 +435,7 @@ var _ = Describe("CloudFormation template builder API", func() {
 							ALBIngress:   api.Disabled(),
 							XRay:         api.Disabled(),
 							CloudWatch:   api.Disabled(),
+							ElasticInference: api.Disabled(),
 						},
 					},
 					SSH: &api.NodeGroupSSH{
