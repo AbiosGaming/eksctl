@@ -550,7 +550,7 @@ type NodeGroup struct {
 	// +optional
 	InstanceType string `json:"instanceType,omitempty"`
 	// +optional
-	ElasticInferenceAccelerators []string `json:"elasticInferenceAccelerator,omitempty"`
+	ElasticInferenceAccelerators []string `json:"elasticInferenceAccelerators,omitempty"`
 	// +optional
 	InstancesDistribution *NodeGroupInstancesDistribution `json:"instancesDistribution,omitempty"`
 	// +optional
